@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
         height: 70,
         borderLeftWidth:2,
         borderBottomWidth:2,
-        borderColor:'#D1D1D1',
+        borderColor:'#6B6B6B',
         borderBottomStartRadius:15
     },
     avatar: {
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
         position:'relative',
         flex: 1,
         padding: 8,
-        backgroundColor: '#d1d1d1',
+        backgroundColor: '#6B6B6B',
         borderRadius: 8,
     },
     username: {
