@@ -17,7 +17,7 @@ interface CommentData {
 const comments: CommentData[] = [
     {
         id: 2,
-        username: 'User2',
+        username: 'Alex John',
         text: 'Replying to User1\'s comment.',
         replies: [
             {id: 3, username: 'User3', text: 'This is a reply to User2.', replies: []},
@@ -52,7 +52,7 @@ export default function TabOneScreen() {
                             <View style={{position: 'relative'}}>
                                 <View style={styles.more_container}>
                                     <TouchableOpacity onPress={handleViewMoreReplies}>
-                                        <Text style={styles.viewMoreReplies}>View more {comment.replies.length -1} replies</Text>
+                                        <Text style={styles.viewMoreReplies}>View more {comment.replies.length -1} comments ...</Text>
                                     </TouchableOpacity>
                                 </View>
                                 <View style={styles.newView2}>
@@ -85,7 +85,7 @@ export default function TabOneScreen() {
         );
     };
     return (
-        <View>
+        <View style={styles.container}>
             {renderComments(comments)}
             <View style={styles.replyInputContainer}>
                 <TextInput placeholder="Add a reply..." style={styles.input}/>
@@ -103,14 +103,10 @@ const styles = StyleSheet.create({
         padding: 16,
     },
     more_container: {
-        zIndex: 1000,
-        top: 1,
         flexDirection: 'row',
         alignItems: 'center',
         marginLeft: 16,
-        paddingBottom:3,
         marginBottom: 10,
-        borderRadius: 8,
     },
     replyInputContainer: {
         flexDirection: 'row',
@@ -129,8 +125,9 @@ const styles = StyleSheet.create({
         paddingLeft: 16,
     },
     viewMoreReplies: {
-        color: 'red',
-        marginTop: 8,
+        fontWeight: 'bold',
+        marginVertical: 4,
+        color: '#6B6B6B',
     },
     newView2: {
         position: 'absolute',

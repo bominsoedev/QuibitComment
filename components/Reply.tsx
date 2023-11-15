@@ -5,18 +5,27 @@ import {Avatar} from 'react-native-elements';
 
 const Reply: React.FC<ReplyProps> = ({username, text}) => {
     return (
-        <View style={{position: 'relative'}}>
+        <View style={{position: 'relative',marginBottom:5}}>
             <View style={styles.container}>
                 <Avatar
                     rounded
                     size="small"
                     title={username.charAt(0)}
-                    titleStyle={{color: 'black'}}
+                    titleStyle={{color: 'white'}}
                     containerStyle={styles.avatar}
+                    source={require('../assets/Ellipse19.png')}
                 />
                 <View style={styles.replyContainer}>
-                    <Text style={styles.username}>{username}</Text>
-                    <Text>{text}</Text>
+                    <View>
+                        <View style={{flexDirection:'row'}}>
+                            <View style={{marginRight:10}}>
+                                <Text style={styles.username}>{username}</Text>
+                            </View>
+                            <View>
+                                <Text style={styles.username}>{text}</Text>
+                            </View>
+                        </View>
+                    </View>
                 </View>
             </View>
             <View style={styles.newView2}>
@@ -43,9 +52,9 @@ const styles = StyleSheet.create({
     newView2: {
         position:'absolute',
         left: -18,
-        bottom:30,
+        bottom:20,
         width: 30,
-        height: 70,
+        height: 130,
         borderLeftWidth:2,
         borderBottomWidth:2,
         borderColor:'#6B6B6B',
@@ -53,18 +62,16 @@ const styles = StyleSheet.create({
     },
     avatar: {
         marginRight: 8,
-        backgroundColor: 'white'
+        backgroundColor: 'black'
     },
     replyContainer: {
-        position:'relative',
         flex: 1,
         padding: 8,
-        backgroundColor: '#6B6B6B',
-        borderRadius: 8,
     },
     username: {
         fontWeight: 'bold',
         marginBottom: 4,
+        color: '#6B6B6B',
     },
 });
 
